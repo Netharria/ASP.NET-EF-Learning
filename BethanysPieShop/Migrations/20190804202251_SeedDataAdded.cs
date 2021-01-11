@@ -6,11 +6,6 @@ namespace BethanysPieShop.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "CategoryID",
-                table: "Categories",
-                newName: "CategoryId");
-
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CategoryName", "Description" },
@@ -116,11 +111,6 @@ namespace BethanysPieShop.Migrations
                 table: "Categories",
                 keyColumn: "CategoryId",
                 keyValue: 3);
-
-            migrationBuilder.RenameColumn(
-                name: "CategoryId",
-                table: "Categories",
-                newName: "CategoryID");
         }
     }
 }

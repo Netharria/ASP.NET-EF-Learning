@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BethanysPieShop.Migrations
 {
-    public partial class ShoppingCartAdded : Migration
+    public partial class AddShoppingCartItem : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,11 +11,11 @@ namespace BethanysPieShop.Migrations
                 name: "ShoppingCartItems",
                 columns: table => new
                 {
-                    ShoppingCartItemId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PieId = table.Column<int>(type: "int", nullable: true),
-                    Amount = table.Column<int>(type: "int", nullable: false),
-                    ShoppingCartId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ShoppingCartItemId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    PieId = table.Column<int>(nullable: true),
+                    Amount = table.Column<int>(nullable: false),
+                    ShoppingCartId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
